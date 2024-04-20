@@ -1,0 +1,12 @@
+:root{
+    --primary:red;
+    --secondry:blue;
+    --light:gray;
+    --dark:black;
+}
+h1{
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
