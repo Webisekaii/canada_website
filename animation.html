@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- divinectorweb.com -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css Rotating moon around earth Animation</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+	margin: 0;
+	overflow: hidden;
+}
+.wrapper {
+	width: 100vw;
+	height: 100vh;
+	background-color: #000;
+	position: relative;
+}
+.earth {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background: url('earth.png');
+	background-size: cover;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation: ani-3 15s linear infinite;
+}
+.moon {
+	width: 60px;
+	height: 60px;
+	background: url('moon.png');
+	background-size: cover;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	animation: ani-1 7s linear infinite;
+}
+.star {
+	width: 5px;
+	height: 5px;
+	background-color: #fff;
+	position: absolute;
+	animation: ani-2 2s linear infinite;
+}
+@keyframes ani-3 {
+	0% {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	100% {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
+@keyframes ani-1 {
+	0% {
+		transform: translate(-50%, -50%) rotate(0deg) translateX(100px) rotate(0deg);
+	}
+	100% {
+		transform: translate(-50%, -50%) rotate(360deg) translateX(100px) rotate(-360deg);
+	}
+}
+@keyframes ani-2 {
+	0%, 100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+}
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="earth"><img src="./images/canada.png" width="300px" alt=""></div>
+        <div class="moon"><img src="./images/canada.png" width="200px" alt=""></div>
+        <!-- Generate more random stars if you want-->
+        <div class="star" style="top: 10%; left: 20%;"></div>
+        <div class="star" style="top: 40%; left: 70%;"></div>
+        <div class="star" style="top: 60%; left: 30%;"></div>
+        <div class="star" style="top: 80%; left: 80%;"></div>
+    </div>
+</body>
+</html>
