@@ -6,26 +6,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Image gallery</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+      body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+	background: linear-gradient(45deg, #ed0606, #f0f3f4);
+}
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: 80%;
+	margin: 0 auto;
+}
+.image {
+	margin: 10px;
+	position: relative;
+	flex: 1 1 calc(33.33% - 20px);
+	max-width: 300px;
+	overflow: hidden;
+}
+.image img {
+	width: 100%;
+	cursor: pointer;
+}
+@media (max-width: 768px) {
+	.image {
+		flex: 1 1 calc(50% - 20px);
+	}
+}
+@media (max-width: 576px) {
+	.image {
+		flex: 1 1 100%;
+	}
+}
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.9);
+	padding-top: 60px;
+}
+.modal img {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+}
+.close {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.close:hover, .close:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+}
+.caption {
+	margin: 10px;
+	color: #ccc;
+	text-align: center;
+}
+@media (max-width: 600px) {
+	body {
+		height: 100%;
+	}
+}
+
+    </style>
 </head>
 <body>
     <div class="gallery"> 
         <div class="image">
-          <img src="port/port1.jpg" alt="Image 1" onclick="openModal('port/port1.jpg', 'Web Design')">
+          <img src="./canada-img/c1.jpg" alt="Image 1" onclick="openModal('./canada-img/c1.jpg', 'city 1')">
         </div>
         <div class="image">
-          <img src="port/port2.jpg" alt="Image 2" onclick="openModal('port/port2.jpg', 'Graphics Design')">
+          <img src="./canada-img/c2.jpg" alt="Image 2" onclick="openModal('./canada-img/c2.jpg', 'city 2')">
         </div>
         <div class="image">
-          <img src="port/port3.jpg" alt="Image 3" onclick="openModal('port/port3.jpg', 'UI UX Design')">
+          <img src="./canada-img/c3.jpg" alt="Image 3" onclick="openModal('./canada-img/c3.jpg', 'city 3')">
         </div>
         <div class="image">
-          <img src="port/port4.jpg" alt="Image 4" onclick="openModal('port/port4.jpg', 'Photography')">
+          <img src="./canada-img/c4.jpg" alt="Image 4" onclick="openModal('./canada-img/c4.jpg', 'city 4')">
         </div>
         <div class="image">
-          <img src="port/port5.jpg" alt="Image 5" onclick="openModal('port/port5.jpg', 'Web Development')">
+          <img src="../canada-img/c1.jpg" alt="Image 5" onclick="openModal('./canada-img/c1.jpg', 'city 5')">
         </div>
         <div class="image">
-          <img src="port/port6.jpg" alt="Image 6" onclick="openModal('port/port6.jpg', 'Digital Marketing')">
+          <img src="./canada-img/c3.jpg" alt="Image 6" onclick="openModal('./canada-img/c3.jpg', 'city 6')">
         </div>
       </div>
       
